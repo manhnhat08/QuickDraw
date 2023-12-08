@@ -70,7 +70,7 @@ with mp_hands.Hands(
                 else:
                     is_drawing = True
                     is_shown = False
-                    points.append((int(hand_landmarks.landmark[8].x*640), int(hand_landmarks.landmark[8].y*480)))
+                    points.append((int(hand_landmarks.landmark[8].x * 640), int(hand_landmarks.landmark[8].y * 480)))
                     for i in range(1, len(points)):
                         cv2.line(image, points[i - 1], points[i], (0, 255, 0), 2)
                         cv2.line(canvas, points[i - 1], points[i], (255, 255, 255), 5)
@@ -81,7 +81,7 @@ with mp_hands.Hands(
                     mp_drawing_styles.get_default_hand_landmarks_style(),
                     mp_drawing_styles.get_default_hand_connections_style())
                 if not is_drawing and is_shown:
-                    cv2.putText(image, 'You are drawing', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0,255,0), 5,
+                    cv2.putText(image, 'You are drawing', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, (0, 255, 0), 5,
                                 cv2.LINE_AA)
                     image[5:65, 490:550] = get_overlay(image[5:65, 490:550], class_images[predicted_class], (60, 60))
 

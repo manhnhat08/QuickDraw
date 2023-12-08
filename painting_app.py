@@ -36,7 +36,7 @@ def main():
         return x, y
 
     cv2.setMouseCallback('Canvas', paint_draw)
-    while (1):
+    while 1:
         cv2.imshow('Canvas', 255 - image)
         key = cv2.waitKey(10)
         if key == ord(" "):

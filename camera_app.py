@@ -128,13 +128,13 @@ def main(opt):
                     cv2.line(frame, points[i - 1], points[i], color_pointer, 2)
 
         if is_shown:
-            cv2.putText(frame, 'You are drawing', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, color_pointer, 5, cv2.LINE_AA)
-            frame[5:65, 490:550] = get_overlay(frame[5:65, 490:550], class_images[predicted_class], (60,60))
-
+            cv2.putText(frame, 'You are drawing', (100, 50), cv2.FONT_HERSHEY_SIMPLEX, 1.5, color_pointer, 5,
+                        cv2.LINE_AA)
+            frame[5:65, 490:550] = get_overlay(frame[5:65, 490:550], class_images[predicted_class], (60, 60))
 
         cv2.imshow("Camera", frame)
         if opt.canvas:
-            cv2.imshow("Canvas", 255-canvas)
+            cv2.imshow("Canvas", 255 - canvas)
 
     camera.release()
     cv2.destroyAllWindows()
